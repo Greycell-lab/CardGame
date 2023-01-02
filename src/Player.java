@@ -13,7 +13,6 @@ public class Player {
             System.out.println((i + ". " + "" + x));
             i++;
         }
-        System.out.println();
         System.out.println("\n");
     }
 }

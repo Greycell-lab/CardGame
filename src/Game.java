@@ -75,34 +75,13 @@ public class Game {
                 fromBoard = Integer.parseInt(sc.nextLine());
                 passed = true;
             } catch (NumberFormatException e) {
-                System.out.println("Something went wrong...");
                 passed = false;
             }
-        }while(!passed);
-        switch(trade){
-            case 1 ->{
-                p.hand.remove(0);
-                p.hand.add(0, onBoard.get(fromBoard-1));
-            }
-            case 2 ->{
-                p.hand.remove(1);
-                p.hand.add(1, onBoard.get(fromBoard-1));
-            }
-            case 3 ->{
-                p.hand.remove(2);
-                p.hand.add(2, onBoard.get(fromBoard-1));
-            }
-            case 4 ->{
-                p.hand.remove(3);
-                p.hand.add(3, onBoard.get(fromBoard-1));
+            if(trade <= 0 || trade > 5 || fromBoard <=0 || fromBoard > 3) System.out.println("Please choose between 1 to 5");
+        }while(!passed || trade > 5 || trade <= 0);
 
-            }
-            case 5 ->{
-                p.hand.remove(4);
-                p.hand.add(4, onBoard.get(fromBoard));
-            }
-            default -> System.out.println("Something went wrong...");
-        }
+        p.hand.remove(trade-1);
+        p.hand.add(trade-1, onBoard.get(fromBoard-1));
         onBoard.clear();
 
     }
