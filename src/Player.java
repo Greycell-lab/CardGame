@@ -6,9 +6,14 @@ public class Player {
         hand.add(Game.cardDeck.pop());
     }
     public void showHand(){
+        int i = 1;
         System.out.println();
         System.out.println("Your Hand");
-        for(var x : hand) System.out.print(x + " ");
+        for(var x : hand) {
+            System.out.println((i + ". " + "" + x));
+            i++;
+        }
+        System.out.println();
         System.out.println("\n");
     }
 }
